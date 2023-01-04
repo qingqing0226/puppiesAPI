@@ -1,6 +1,7 @@
-## Puppies API with Typescript
+## Puppies API backend
 
-built with `spring boot` and `postgres`
+- This is the backend of puppiesAPi built with `spring boot` and `postgres`
+- The frontend is [here](https://github.com/qingqing0226/puppiesAPI-frontend) built with `React` and `TypeScript`
 
 a RESTful API with the following endpoints:
 
