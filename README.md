@@ -1,6 +1,7 @@
-## Puppies API with Typescript
+## Puppies API backend
 
-built with `spring boot` and `postgres`
+- This is the backend of puppiesAPi built with `spring boot` and `postgres`
+- The frontend is [here](https://github.com/qingqing0226/puppiesAPI-frontend) built with `React` and `TypeScript`
 
 a RESTful API with the following endpoints:
 
@@ -10,7 +11,7 @@ a RESTful API with the following endpoints:
 - PUT: `api/puppies/:id`. This should put one puppy down (jk, just update the specific puppy).
 - DELETE: `api/puppies/:id`. This should actually put one puppy down aka delete it.
 
-`puppy` have the following attributes: 
+`puppy` have the following attributes:
 - id
 - breed
 - name
