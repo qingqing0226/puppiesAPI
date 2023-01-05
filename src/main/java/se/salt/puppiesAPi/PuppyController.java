@@ -13,6 +13,7 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @RestController
 @RequestMapping("/api/puppies")
+@CrossOrigin
 public class PuppyController {
     @Autowired
     private PuppyService puppyService;
@@ -38,10 +39,9 @@ public class PuppyController {
 
     @PutMapping("/{id}")
     ResponseEntity<Puppy> updatePuppy(@RequestBody Puppy puppy, @PathVariable long id){
-        if(puppy.getId() != id) throw new ResponseStatusException(NOT_FOUND);
         try {
-            puppyService.getById(id);
-            Puppy saved = puppyService.savePuppy(puppy);
+            Puppy found = puppyService.getById(id);
+            Puppy saved = puppyService.updatePuppy(found, puppy);
             return ResponseEntity.ok(saved);
         } catch (NoSuchElementException e) {
             throw new ResponseStatusException(NOT_FOUND, e.getMessage());

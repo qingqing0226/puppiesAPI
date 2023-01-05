@@ -25,4 +25,9 @@ public class PuppyService {
     public void deleteById(long id) {
         puppyRepository.deleteById(id);
     }
+
+    public Puppy updatePuppy(Puppy found, Puppy update) {
+        update.setId(found.getId());
+        return puppyRepository.savePuppy(update);
+    }
 }

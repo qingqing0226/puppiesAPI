@@ -3,9 +3,6 @@ package se.salt.puppiesAPi;
 
 import jakarta.persistence.*;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 
 @Entity
 @Table(name = "puppies")
@@ -21,6 +18,8 @@ public class Puppy {
     @Column(name = "birth_date")
     private String birthDate;
 
+    private String image;
+
     public Puppy() {
     }
 
@@ -30,11 +29,19 @@ public class Puppy {
         this.birthDate = birthDate;
     }
 
-    public Puppy(long id, String breed, String name, String birthDate) {
+    public Puppy(String breed, String name, String birthDate, String image) {
+        this.breed = breed;
+        this.name = name;
+        this.birthDate = birthDate;
+        this.image = image;
+    }
+
+    public Puppy(long id, String breed, String name, String birthDate, String image) {
         this.id = id;
         this.breed = breed;
         this.name = name;
         this.birthDate = birthDate;
+        this.image = image;
     }
 
     public long getId() {
@@ -67,5 +74,13 @@ public class Puppy {
 
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
